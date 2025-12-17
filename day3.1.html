@@ -45,20 +45,6 @@
                 <td>80</td>
             </tr>
             </tbody>
-            <script>
-    const rows = document.querySelectorAll("#resultTable tbody tr");
-
-    rows.forEach(row => {
-        const marks = row.querySelectorAll(".mark");
-        let sum = 0;
-
-        marks.forEach(mark => {
-            sum += Number(mark.innerText);
-        });
-
-        row.querySelector(".total").innerText = sum;
-    });
-</script>
            
     </caption>
 </html>
