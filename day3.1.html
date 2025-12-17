@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 3 - My Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <caption>
+        <h1> Student Result sheet </h1>
+        <table border="2" cellpadding="10" cellspacing="0">
+            <thead>
+            <tr>
+                <th rowspan="2">S.N</th>
+                <th rowspan="2">Student Name</th>
+                <th colspan="3">Marks</th>
+                <th rowspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Math</th>
+                <th>Science</th>
+                <th>English</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Saurav Uprety</td>
+                <td>95</td>
+                <td>88</td>
+                <td>92</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Doe</td>
+                <td>85</td>
+                <td>90</td>
+                <td>87</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>John Smith</td>
+                <td>78</td>
+                <td>82</td>
+                <td>80</td>
+            </tr>
+            </tbody>
+            <script>
+    const rows = document.querySelectorAll("#resultTable tbody tr");
+
+    rows.forEach(row => {
+        const marks = row.querySelectorAll(".mark");
+        let sum = 0;
+
+        marks.forEach(mark => {
+            sum += Number(mark.innerText);
+        });
+
+        row.querySelector(".total").innerText = sum;
+    });
+</script>
+           
+    </caption>
+</html>
