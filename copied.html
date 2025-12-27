@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .name-title h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .name-title h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #ecf0f1;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        article {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        aside {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .skills-list {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skills-list ul, .skills-list ol {
+            padding-left: 1.5rem;
+        }
+        
+        .skills-list li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        thead {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tfoot {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+        
+        /* Media Section */
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .video-wrapper, .map-wrapper {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .video-wrapper iframe, .map-wrapper iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 5px;
+        }
+        
+        /* Form Styling */
+        form {
+            margin-top: 1.5rem;
+        }
+        
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Details/Summary */
+        details {
+            margin-top: 1.5rem;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+        
+        details div {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Frames Explanation */
+        .frames-explanation {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .media-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Text-level semantic styling */
+        strong {
+            color: #2c3e50;
+        }
+        
+        em {
+            color: #e74c3c;
+            font-style: italic;
+        }
+        
+        mark {
+            background-color: #ffeaa7;
+            padding: 0.1rem 0.3rem;
+        }
+        
+        abbr {
+            border-bottom: 1px dotted #3498db;
+            cursor: help;
+        }
+        
+        cite {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="profile-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Alex Morgan" class="profile-photo">
+            <div class="name-title">
+                <h1>Alex Morgan</h1>
+                <h2>Web Developer & Digital Creator</h2>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#qualifications">Qualifications</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#more">More Info</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <article>
+                    <p>Hello! I'm <strong>Alex Morgan</strong>, a passionate <abbr title="Web Developer">WD</abbr> with over <mark>5 years of experience</mark> creating engaging digital experiences. I specialize in front-end development but also have substantial back-end knowledge.</p>
+                    <p>My journey began with a degree in <em>Computer Science</em> and has evolved through various roles in tech companies and freelance projects. I believe in writing <strong>clean, efficient code</strong> and creating <em>user-friendly interfaces</em>.</p>
+                    <p>When I'm not coding, you can find me hiking, practicing photography, or exploring new coffee shops. I'm also an advocate for <mark>open-source software</mark> and regularly contribute to projects on GitHub.</p>
+                    <p>My work has been recognized in several publications, including <cite>Web Developer Magazine</cite> and <cite>Tech Innovations Journal</cite>.</p>
+                </article>
+                <aside>
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Seattle, WA</li>
+                        <li><strong>Experience:</strong> 5+ years</li>
+                        <li><strong>Education:</strong> B.S. Computer Science</li>
+                        <li><strong>Availability:</strong> Open to opportunities</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:alex@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skills-list">
+                    <h3>Technical Skills <sub>(proficient)</sub></h3>
+                    <ul>
+                        <li>HTML5, CSS3, JavaScript <sup>ES6+</sup></li>
+                        <li>React.js & Vue.js Frameworks</li>
+                        <li>Node.js & Express.js</li>
+                        <li>Responsive Web Design</li>
+                        <li>Version Control (Git)</li>
+                        <li>RESTful API Development</li>
+                    </ul>
+                </div>
+                <div class="skills-list">
+                    <h3>Professional Skills <sup>*</sup></h3>
+                    <ol>
+                        <li>Project Management</li>
+                        <li>Team Leadership</li>
+                        <li>Client Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Agile/Scrum Methodologies</li>
+                    </ol>
+                </div>
+                <div class="skills-list">
+                    <h3>Currently Learning</h3>
+                    <dl>
+                        <dt>WebAssembly</dt>
+                        <dd>For high-performance web applications</dd>
+                        <dt>Machine Learning</dt>
+                        <dd>Basic ML concepts for web integration</dd>
+                        <dt>GraphQL</dt>
+                        <dd>Modern API query language</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qualifications Table -->
+        <section id="qualifications">
+            <h2>Qualifications & Experience</h2>
+            <table>
+                <caption>Education & Professional Background</caption>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Qualification / Position</th>
+                        <th>Institution / Company</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020-Present</td>
+                        <td>Senior Web Developer</td>
+                        <td>TechSolutions Inc.</td>
+                        <td>Lead front-end development for enterprise clients</td>
+                    </tr>
+                    <tr>
+                        <td>2018-2020</td>
+                        <td>Web Developer</td>
+                        <td>Digital Creations Agency</td>
+                        <td>Full-stack development for various clients</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">2014-2018</td>
+                        <td>B.S. Computer Science</td>
+                        <td>University of Washington</td>
+                        <td>Graduated <strong>magna cum laude</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Freelance Developer</td>
+                        <td>Self-Employed</td>
+                        <td>Built websites for small businesses</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total Years of Experience</td>
+                        <td>5+ Years</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Media Section -->
+        <section id="media">
+            <h2>My Work & Interests</h2>
+            <div class="media-container">
+                <div class="video-wrapper">
+                    <h3>Introduction Video</h3>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Introduction Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>A brief introduction to my work and philosophy.</p>
+                </div>
+                <div class="map-wrapper">
+                    <h3>My Hometown</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172139.4161672912!2d-122.48249022499998!3d47.6129432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490102c93e83355%3A0x102565466944d59a!2sSeattle%2C%20WA!5e0!3m2!1sen!2sus!4v1689876543210!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>Seattle, Washington - Where I call home.</p>
+                </div>
+            </div>
+            
+            <!-- Audio Element -->
+            <div style="margin-top: 2rem;">
+                <h3>My Favorite Coding Music</h3>
+                <audio controls style="width: 100%; margin-top: 0.5rem;">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Project Details</legend>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <select id="subject" name="subject">
+                            <option value="">Select a subject</option>
+                            <option value="freelance">Freelance Project</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="collab">Collaboration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsletter">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            Subscribe to my newsletter
+                        </label>
+                    </div>
+                </fieldset>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Details/Summary Section -->
+        <section id="more">
+            <h2>Additional Information</h2>
+            <details>
+                <summary>More About My Work Process</summary>
+                <div>
+                    <p>My development process follows <strong>agile methodologies</strong> with an emphasis on <em>user-centered design</em>. I typically break down projects into sprints and maintain regular communication with stakeholders.</p>
+                    <p>I'm proficient with tools like <mark>Jira, Trello, and Asana</mark> for project management, and I use <abbr title="Integrated Development Environment">IDE</abbr>s like VS Code and WebStorm for development.</p>
+                    <p>For version control, I use Git and have experience with both <sub>GitHub</sub> and <sub>GitLab</sub> platforms. I also implement <strong>continuous integration/continuous deployment (CI/CD)</strong> pipelines for efficient deployment.</p>
+                </div>
+            </details>
+            
+            <details>
+                <summary>Personal Interests & Hobbies</summary>
+                <div>
+                    <p>Outside of coding, I'm an avid photographer and hiker. I've combined these interests by creating a <a href="#" target="_blank">photography blog</a> where I share photos from my Pacific Northwest adventures.</p>
+                    <p>I'm also a coffee enthusiast and enjoy experimenting with different brewing methods. Recently, I've been learning about <em>specialty coffee</em> and its origins.</p>
+                    <p>In the community, I volunteer with local organizations that teach coding to underrepresented youth, believing strongly in <mark>diversity and inclusion in tech</mark>.</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- Frames Explanation -->
+        <section>
+            <h2>HTML Frames (Historical Context)</h2>
+            <div class="frames-explanation">
+                <p>While HTML5 doesn't support frames (<code>&lt;frameset&gt;</code> and <code>&lt;frame&gt;</code>) due to accessibility and usability issues, they were commonly used in early web development to divide a page into multiple sections. Here's an example of how they were structured:</p>
+                <pre>
+&lt;frameset cols="25%,*,25%"&gt;
+  &lt;frame src="menu.html" name="menu"&gt;
+  &lt;frame src="content.html" name="content"&gt;
+  &lt;frame src="ads.html" name="ads"&gt;
+&lt;/frameset&gt;
+                </pre>
+                <p>Modern web development uses <code>&lt;iframe&gt;</code> for embedding external content and CSS/JavaScript for creating responsive layouts instead of frames.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:alex@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; <span id="currentYear"></span> Alex Morgan. All rights reserved.</p>
+            <p>This portfolio site uses semantic HTML5 elements for accessibility and structure.</p>
+            <p>Contact: <a href="mailto:alex@example.com" style="color: #3498db;">alex@example.com</a> | Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
