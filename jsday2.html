@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <title> Hello</title>
+    </head>
+ <body>
+    <script>
+        class student
+        {
+            constructor(name,age)
+            {
+                this.name=name;
+                this.age=age;
+            }
+            display ()
+            {
+                document.write(
+                    "Name:  "+this.name
+                );
+            }
+        }
+        class car
+        {
+        constructor (brand,price,model)
+        {
+            this.brand=brand;
+            this.price=price;
+            this.model=model;
+        }
+        display()
+        {
+            document.write(
+                "Brand:  "+this.brand+" Price:  "+this.price+" Model:  "+this.model
+            );
+        }
+        }
+        let C1=new car('BMW','50L','2024');
+        C1.display();
+        document.write("<br>"); 
+
+
+        let S1= new student('Dipu','21');
+        S1.display();
+    </script>
+ </body>
+</html>

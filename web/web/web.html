@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;
+         padding:0;
+        box-sizing:border-box;
+        }
+        #navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color: rgb(43, 43, 92);
+            width: 100%;
+            height: 50px;
+        }
+        #logo{
+            color:white;
+            font-size: 24px;
+            padding-left: 50px;
+        }
+        #logo::first-letter{
+            color:red
+        }
+        #link a{
+            color:white;
+            text-decoration: none;
+            text-transform: capitalize;
+            padding: 10px 10px;
+        }
+        #link a:hover{
+            color: rgb(255, 0, 0);
+         
+        }
+        .hero{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color:  rgb(43, 43, 92);
+            width: 100%;
+            height: 500px;
+        }
+        #body_logo p{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #text{
+            color:white;
+            padding-left: 50px;
+            font-size: 28px;
+        }
+        #text p{
+            color:red;
+            text-decoration: underline;
+        }
+        img{
+            width: 400px;
+            height: 400px;
+            padding-right: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar">
+        <div id="logo">Ankit</div>
+        <div id="link">
+            <a href="j.html">home</a>
+            <a href="#">about</a>
+            <a href="#">services</a>
+            <a href="#">portfolio</a>
+            <a href="#">contact</a>
+        </div>
+    </nav>
+    <section id="hero" class="hero">
+        <div id="body">
+        <div id="text">
+            <h1>I provide creative</h1>
+            <p>design solutions</p>
+        </div>
+        <!-- <div id="body_logo">
+            <p>f</p>
+            <p>r</p>
+            <p>o</p>
+            <p>n</p>
+        </div> -->
+        </div>
+        <div id="hero_img">
+            <img src="download.png" alt="myphoto">
+        </div>
+    </section>
+</body>
+
+</html>

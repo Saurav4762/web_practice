@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <title> Array Methods</title>
+    </head>
+ <body>
+    <script>
+        let text = "I have a dog.";
+        let rule = /dog/;
+        console.log(rule.test(text)); // true
+
+        let text1 = "abc";
+        let rule1 = /[0-9]/;    
+        console.log(rule1.test(text1)); // true
+
+        let text2 = "Hello123";
+        let rule2 = /[A-ZZa-z0-9]/;    
+        console.log(rule2.test(text2)); // true
+
+        let text3 = "Hook";
+        let rule3 = /H.k/;
+        console.log(rule3.test(text3)); // true
+      
+
+        let text4 = "ram@123";
+        let rule4 = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).+$/;    
+        console.log(rule4.test(text4)); // true
+    </script>
+ </body>
+</html>

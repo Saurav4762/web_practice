@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #Navbar {
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            padding: 10px 20px;
+        }
+
+        #link a {
+            gap: 20px;
+            padding-left: 10px;
+            text-decoration: none;
+            color: gray;
+            border-radius: 5px;
+        }
+
+        #link a:hover {
+            color: black;
+            border-bottom: 2px solid black;
+        }
+        #HeroSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        #herotext {
+            padding: 20px;
+        }
+
+        #heroimg img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="Navbar">
+        <div id="logo">Saurav</div>
+        <div id="link">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Portfolio </a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+    <section id="HeroSection">
+        <div id="Herobody">
+            <div id="heroimg">
+                <img src="Screenshot 2025-12-27 111444.png" alt="hero image" width="500px" height="500px">
+            </div>
+            <div id="herotext">
+                <h1>Welcome to my website</h1>
+                <p>This is a sample hero section with an image and some text.</p>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
