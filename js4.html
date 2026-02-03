@@ -5,9 +5,23 @@
     </head>
     <body>
         <script>
+
+            //validation for email address
             let Email = "upretysaurav4@gmail.com";
             let rule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             console.log(rule.test(Email)); // true
         </script>
+
+        //change text on button click
+
+        <p id = "text">Hello</p>
+        <button onclick="changeText()">Click Me </button>
+        <script>
+            function changeText()
+            {
+                document.getElementById("text").innerHTML="Welcome to JS World!";
+            }
+        </script>
     </body>
+
 </html>
