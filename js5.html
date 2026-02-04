@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Creating a form </title>
+    </head>
+    <body>
+        <script>
+
+            function valid()
+            {
+                let name = document.getElementById("Name").value;
+                console.log(name);
+            }
+            console.log(name);
+        </script>
+        <form onsubmit="return valid()">
+            <label for="Name">Name:</label><br>
+            <input type="text" id="Name" name="Name"><br>
+            <div class="error" id="Name error"></div><br>
+            <button type="submit">Submit</button>
+           
+        </form>
+</html>

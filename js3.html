@@ -5,26 +5,32 @@
     </head>
  <body>
     <script>
+        //validation for specific word
         let text = "I have a dog.";
         let rule = /dog/;
         console.log(rule.test(text)); // true
 
+        //validation for digit
         let text1 = "abc";
         let rule1 = /[0-9]/;    
         console.log(rule1.test(text1)); // true
 
+        //validation for alphanumeric
         let text2 = "Hello123";
         let rule2 = /[A-ZZa-z0-9]/;    
         console.log(rule2.test(text2)); // true
 
+
+        //validation for any character
         let text3 = "Hook";
         let rule3 = /H.k/;
         console.log(rule3.test(text3)); // true
       
-
+        //validation for password
         let text4 = "ram@123";
         let rule4 = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).+$/;    
         console.log(rule4.test(text4)); // true
+        
     </script>
  </body>
 </html>
